@@ -1,133 +1,193 @@
 <!DOCTYPE html>
 <html lang="id">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tugas 1 JavaScript - Hitung Luas Bangun Datar</title>
 		<style>
 			* {
 				box-sizing: border-box;
 			}
 			body {
-				font-family: Arial, Helvetica, sans-serif;
-				background: #f7f9fc;
-				color: #0b1220;
 				margin: 0;
-				padding: 25px;
-			}
-			.wrap {
-				max-width: 920px;
-				margin: 0 auto;
-				background: #ffffff;
-				padding: 25px;
-				border-radius: 8px;
-				box-shadow: 0 16px 18px rgba(11, 18, 32, 0.06);
+				font-family: Inter, "Segoe UI", Arial;
+				background: linear-gradient(180deg, #071029 0%, #0f172a 100%);
+				color: #e6eef8;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				padding: 32px;
 			}
 			header {
-				text-align: center;
+				max-width: 1100px;
+				margin: 0 auto 24px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 16px;
 			}
-			header h2 {
-				margin: 2px;
-				font-size: 26px;
+			.title {
+				line-height: 1;
 			}
-			header p {
-				margin: 10px;
-				color: #556077;
+			.title h1 {
+				margin: 0;
+				font-size: 1.6rem;
+				letter-spacing: 0.6px;
 			}
-			section {
-				padding: 12px 0;
-				border-top: 1px solid #eef2f6;
+			.title p {
+				margin: 4px 0 0;
+				color: #94a3b8;
 			}
-			section:first-of-type {
-				border-top: 0;
-				padding-top: 0;
+
+			/* Grid container */
+			.container {
+				max-width: 1100px;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+				gap: 20px;
+			}
+
+			.card {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.02),
+					rgba(255, 255, 255, 0.01)
+				);
+				border: 1px solid rgba(255, 255, 255, 0.04);
+				padding: 18px;
+				border-radius: 12px;
+				box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+				/* opsi: semua kartu minimal tinggi agar rata */
+				min-height: 170px;
+			}
+			.card h3 {
+				margin: 0 0 10px;
 			}
 			.row {
 				display: flex;
-				gap: 8px;
+				gap: 10px;
 				align-items: center;
-				margin: 8px 0;
+				margin-bottom: 10px;
 			}
 			label {
-				font-weight: 600;
-				font-size: 14px;
-				color: #0f172a;
+				flex: 1;
+				color: #94a3b8;
+				font-size: 0.95rem;
 			}
 			input[type="number"] {
-				padding: 6px 8px;
-				border: 1px solid #d1d5db;
-				border-radius: 4px;
+				width: 110px;
+				padding: 8px;
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.04);
+				background: #0f172a;
+				color: inherit;
+			}
+
+			.actions {
+				display: flex;
+				gap: 8px;
+				align-items: center;
+				margin-top: auto;
+			}
+
+			.result {
+				margin-top: 10px;
+				padding: 10px;
+				background: rgba(96, 165, 250, 0.08);
+				border-radius: 8px;
+				color: #60a5fa;
+				font-weight: 600;
 			}
 			button {
-				padding: 6px 10px;
-				border-radius: 5px;
+				background: #3b82f6;
 				border: 0;
-				background: #2563eb;
-				color: #fff;
+				color: #02244a;
+				padding: 8px 12px;
+				border-radius: 10px;
 				cursor: pointer;
+				font-weight: 600;
 			}
+
 			button:hover {
-				background: #1e40af;
+				background: #2563eb;
 			}
-			.hasil {
-				font-weight: 700;
-				color: #556077;
-				margin-top: 6px;
+			footer {
+				max-width: 1100px;
+				margin: 22px auto 0;
+				color: #94a3b8;
+				text-align: center;
+				font-size: 0.9rem;
+			}
+			@media (max-width: 420px) {
+				body {
+					padding: 16px;
+				}
+				.title h1 {
+					font-size: 1.25rem;
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<div class="wrap">
-			<header>
-				<h2>BELAJAR JAVASCRIPT</h2>
-				<p>Menghitung Luas: Persegi Panjang, Bujur Sangkar, Segitiga</p>
-			</header>
+		<header>
+			<div class="title">
+				<h1>BELAJAR JAVASCRIPT | NFA</h1>
+				<p>Menghitung Luas Persegi Panjang, Bujur Sangkar, dan Segitiga</p>
+			</div>
+		</header>
 
-			<section>
-				<h3>Persegi Panjang (Panjang x Lebar)</h3>
+		<main class="container">
+			<section class="card">
+				<h3>Persegi Panjang</h3>
 				<div class="row">
-					<label
-						>Panjang:
-						<input id="panjang" type="number" placeholder="masukkan panjang"
-					/></label>
-					<label>
-						Lebar: <input id="lebar" type="number" placeholder="masukkan lebar"
-					/></label>
+					<label for="panjang">Panjang</label>
+					<input id="panjang" type="number" min="0" />
+				</div>
+				<div class="row">
+					<label for="lebar">Lebar</label>
+					<input id="lebar" type="number" min="0" />
+				</div>
+
+				<!-- actions ada di bawah karena .actions { margin-top: auto } -->
+				<div class="actions">
 					<button id="hitungPP">Hitung</button>
+					<div id="hasilPP" class="result">Luas: —</div>
 				</div>
-				<div id="hasilPP" class="hasil">Luas: -</div>
 			</section>
 
-			<hr />
-
-			<section>
-				<h3>Bujur Sangkar (Sisi x Sisi)</h3>
+			<section class="card">
+				<h3>Bujur Sangkar</h3>
 				<div class="row">
-					<label
-						>Sisi: <input id="sisi" type="number" placeholder="masukkan sisi"
-					/></label>
+					<label for="sisi">Sisi</label>
+					<input id="sisi" type="number" min="0" />
+				</div>
+
+				<!-- meskipun cuma 1 row di atas, .actions akan "didorong" ke bawah -->
+				<div class="actions">
 					<button id="hitungBS">Hitung</button>
+					<div id="hasilBS" class="result">Luas: —</div>
 				</div>
-				<div id="hasilBS" class="hasil">Luas: -</div>
 			</section>
 
-			<hr />
-
-			<section>
-				<h3>Segitiga (1/2 x Alas x Tinggi)</h3>
+			<section class="card">
+				<h3>Segitiga</h3>
 				<div class="row">
-					<label
-						>Alas: <input id="alas" type="number" placeholder="masukkan alas"
-					/></label>
-					<label>
-						Tinggi:
-						<input id="tinggi" type="number" placeholder="masukkan tinggi"
-					/></label>
-					<button id="hitungSG">Hitung</button>
+					<label for="alas">Alas</label>
+					<input id="alas" type="number" min="0" />
 				</div>
-				<div id="hasilSG" class="hasil">Luas: -</div>
+				<div class="row">
+					<label for="tinggi">Tinggi</label>
+					<input id="tinggi" type="number" min="0" />
+				</div>
+				<div class="actions">
+					<button id="hitungSG">Hitung</button>
+					<div id="hasilSG" class="result">Luas: —</div>
+				</div>
 			</section>
-		</div>
+		</main>
 
 		<script>
 			// PERSEGI PANJANG
