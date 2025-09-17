@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tugas 1 JavaScript - Luas Bangun Datar</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f9fc;
+        color: #0b1220;
+        margin: 0;
+        padding: 25px;
+      }
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 16px 18px rgba(11, 18, 32, 0.06);
+      }
+      header {
+        text-align: center;
+      }
+      header h2 {
+        margin: 2px;
+        font-size: 26px;
+      }
+      header p {
+        margin: 10px;
+        color: #556077;
+      }
+      section {
+        padding: 12px 0;
+        border-top: 1px solid #eef2f6;
+      }
+      section:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin: 8px 0;
+      }
+      label {
+        font-weight: 600;
+        font-size: 14px;
+        color: #0f172a;
+      }
+      input[type="number"] {
+        padding: 6px 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+      }
+      button {
+        padding: 6px 10px;
+        border-radius: 5px;
+        border: 0;
+        background: #2563eb;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #1e40af;
+      }
+      .hasil {
+        font-weight: 700;
+        color: #556077;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h2>BELAJAR JAVASCRIPT</h2>
+        <p>Menghitung Luas: Persegi Panjang, Bujur Sangkar, Segitiga</p>
+      </header>
+
+      <section>
+        <h3>Persegi Panjang (Panjang x Lebar)</h3>
+        <div class="row">
+          <label
+            >Panjang:
+            <input id="panjang" type="number" placeholder="masukkan panjang"
+          /></label>
+          <label>
+            Lebar: <input id="lebar" type="number" placeholder="masukkan lebar"
+          /></label>
+          <button id="hitungPP">Hitung</button>
+        </div>
+        <div id="hasilPP" class="hasil">Luas: -</div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h3>Bujur Sangkar (Sisi x Sisi)</h3>
+        <div class="row">
+          <label
+            >Sisi: <input id="sisi" type="number" placeholder="masukkan sisi"
+          /></label>
+          <button id="hitungBS">Hitung</button>
+        </div>
+        <div id="hasilBS" class="hasil">Luas: -</div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h3>Segitiga (1/2 x Alas x Tinggi)</h3>
+        <div class="row">
+          <label
+            >Alas: <input id="alas" type="number" placeholder="masukkan alas"
+          /></label>
+          <label>
+            Tinggi:
+            <input id="tinggi" type="number" placeholder="masukkan tinggi"
+          /></label>
+          <button id="hitungSG">Hitung</button>
+        </div>
+        <div id="hasilSG" class="hasil">Luas: -</div>
+      </section>
+    </div>
+
+    <script>
+      // PERSEGI PANJANG
+      // mengembalikan reference ke elemen HTML yang punya atribut id "hitungPP". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+      document
+        .getElementById("hitungPP")
+        .addEventListener("click", function () {
+          const p = Number(document.getElementById("panjang").value) || 0; // Mengambil nilai dari input panjang, default 0 jika kosong
+          const l = Number(document.getElementById("lebar").value) || 0; // Mengambil nilai dari input lebar, default 0 jika kosong
+          const luas = p * l; // Rumus luas persegi panjang
+        document.getElementById("hasilPP").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilPP"
+        alert("Luas: " + luas + "\nRumus: Panjang x Lebar = " + p + " x " + l + " = " + luas); // Menampilkan hasil dalam alert
+        });
+
+      // BUJUR SANGKAR
+      // mengembalikan reference ke elemen HTML yang punya atribut id "hitungBS". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+      document
+        .getElementById("hitungBS")
+        .addEventListener("click", function () {
+          const s = Number(document.getElementById("sisi").value) || 0; // Mengambil nilai dari input sisi, default 0 jika kosong
+          const luas = s * s; // Rumus luas bujur sangkar
+          document.getElementById("hasilBS").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilBS"
+          alert("Luas: " + luas + "\nRumus: Sisi x Sisi = " + s + " x " + s + " = " + luas); // Menampilkan hasil dalam alert
+        });
+
+      // SEGITIGA
+      // mengembalikan reference ke elemen HTML yang punya atribut id "hitungSG". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+      document
+        .getElementById("hitungSG")
+        .addEventListener("click", function () {
+          const a = Number(document.getElementById("alas").value) || 0; // Mengambil nilai dari input alas, default 0 jika kosong
+          const t = Number(document.getElementById("tinggi").value) || 0; // Mengambil nilai dari input tinggi, default 0 jika kosong
+          const luas = (a * t) / 2; // Rumus luas segitiga
+          document.getElementById("hasilSG").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilSG"
+          alert("Luas: " + luas + "\nRumus: 1/2 x Alas x Tinggi = 1/2 x " + a + " x " + t + " = " + luas); // Menampilkan hasil dalam alert
+        });
+    </script>
+  </body>
+</html>
