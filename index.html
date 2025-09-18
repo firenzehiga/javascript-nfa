@@ -3,235 +3,133 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Tugas 1 JavaScript - Hitung Luas Bangun Datar</title>
+		<title>Tugas 2</title>
 		<style>
-			* {
-				box-sizing: border-box;
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				margin: 20px 0;
 			}
-			body {
-				margin: 0;
-				font-family: Inter, "Segoe UI", Arial;
-				background: linear-gradient(180deg, #071029 0%, #0f172a 100%);
-				color: #e6eef8;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				padding: 32px;
-			}
-			header {
-				max-width: 1100px;
-				margin: 0 auto 24px;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				gap: 16px;
-			}
-			.title {
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0;
-				font-size: 1.6rem;
-				letter-spacing: 0.6px;
-			}
-			.title p {
-				margin: 4px 0 0;
-				color: #94a3b8;
-			}
-
-			/* Grid container */
-			.container {
-				max-width: 1100px;
-				margin: 0 auto;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-				gap: 20px;
-			}
-
-			.card {
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-				background: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 0.02),
-					rgba(255, 255, 255, 0.01)
-				);
-				border: 1px solid rgba(255, 255, 255, 0.04);
-				padding: 18px;
-				border-radius: 12px;
-				box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
-				/* opsi: semua kartu minimal tinggi agar rata */
-				min-height: 170px;
-			}
-			.card h3 {
-				margin: 0 0 10px;
-			}
-			.row {
-				display: flex;
-				gap: 10px;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			label {
-				flex: 1;
-				color: #94a3b8;
-				font-size: 0.95rem;
-			}
-			input[type="number"] {
-				width: 110px;
+			th,
+			td {
+				border: 1px solid #ddd;
 				padding: 8px;
-				border-radius: 8px;
-				border: 1px solid rgba(255, 255, 255, 0.04);
-				background: #0f172a;
-				color: inherit;
+				text-align: left;
 			}
-
-			.actions {
-				display: flex;
-				gap: 8px;
-				align-items: center;
-				margin-top: auto;
+			th {
+				background-color: #f2f2f2;
 			}
-
-			.result {
-				margin-top: 10px;
-				padding: 10px;
-				background: rgba(96, 165, 250, 0.08);
-				border-radius: 8px;
-				color: #60a5fa;
-				font-weight: 600;
-			}
-			button {
-				background: #3b82f6;
-				border: 0;
-				color: #02244a;
-				padding: 8px 12px;
-				border-radius: 10px;
-				cursor: pointer;
-				font-weight: 600;
-			}
-
-			button:hover {
-				background: #2563eb;
-			}
-			footer {
-				max-width: 1100px;
-				margin: 22px auto 0;
-				color: #94a3b8;
-				text-align: center;
-				font-size: 0.9rem;
-			}
-			@media (max-width: 420px) {
-				body {
-					padding: 16px;
-				}
-				.title h1 {
-					font-size: 1.25rem;
-				}
+			tfoot {
+				font-weight: bold;
 			}
 		</style>
 	</head>
 	<body>
-		<header>
-			<div class="title">
-				<h1>BELAJAR JAVASCRIPT | NFA</h1>
-				<p>Menghitung Luas Persegi Panjang, Bujur Sangkar, dan Segitiga</p>
-			</div>
-		</header>
-
-		<main class="container">
-			<section class="card">
-				<h3>Persegi Panjang</h3>
-				<div class="row">
-					<label for="panjang">Panjang</label>
-					<input id="panjang" type="number" min="0" />
-				</div>
-				<div class="row">
-					<label for="lebar">Lebar</label>
-					<input id="lebar" type="number" min="0" />
-				</div>
-
-				<div class="actions">
-					<button id="hitungPP">Hitung</button>
-					<div id="hasilPP" class="result">Luas: —</div>
-				</div>
-			</section>
-
-			<section class="card">
-				<h3>Bujur Sangkar</h3>
-				<div class="row">
-					<label for="sisi">Sisi</label>
-					<input id="sisi" type="number" min="0" />
-				</div>
-
-				<div class="actions">
-					<button id="hitungBS">Hitung</button>
-					<div id="hasilBS" class="result">Luas: —</div>
-				</div>
-			</section>
-
-			<section class="card">
-				<h3>Segitiga</h3>
-				<div class="row">
-					<label for="alas">Alas</label>
-					<input id="alas" type="number" min="0" />
-				</div>
-				<div class="row">
-					<label for="tinggi">Tinggi</label>
-					<input id="tinggi" type="number" min="0" />
-				</div>
-				<div class="actions">
-					<button id="hitungSG">Hitung</button>
-					<div id="hasilSG" class="result">Luas: —</div>
-				</div>
-			</section>
-		</main>
+		<h1>Data Pegawai</h1>
+		<table id="tabelPegawai">
+			<thead>
+				<tr>
+					<th>Nama</th>
+					<th>Umur</th>
+					<th>Jabatan</th>
+					<th>Status</th>
+					<th>Gaji Pokok</th>
+					<th>Tunjangan Jabatan</th>
+					<th>BPJS</th>
+					<th>Tunjangan Keluarga</th>
+					<th>Total Gaji</th>
+				</tr>
+			</thead>
+			<tbody id="bodyTabel">
+				<!-- Diisi logika javascript -->
+			</tbody>
+			<tfoot id="footTabel">
+				<!-- Diisi logika javascript -->
+			</tfoot>
+		</table>
 
 		<script>
-			/* PERSEGI PANJANG
-			mengembalikan reference ke elemen HTML yang punya atribut id "hitungPP". 
-			Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
-			*/
-			document
-				.getElementById("hitungPP")
-				.addEventListener("click", function () {
-					const p = Number(document.getElementById("panjang").value); // Mengambil nilai dari input panjang, default 0 jika kosong
-					const l = Number(document.getElementById("lebar").value); // Mengambil nilai dari input lebar, default 0 jika kosong
-					const luas = p * l; // Rumus luas persegi panjang
-					document.getElementById("hasilPP").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilPP"
-					alert(
-						`Luas: ${luas}\nRumus: Panjang x Lebar = ${p} x ${l} = ${luas}`
-					); // Menampilkan hasil dalam alert
-				});
+			/* 
+1	Judul Kolom gunakan thead 
 
-			/*BUJUR SANGKAR
-			 mengembalikan reference ke elemen HTML yang punya atribut id "hitungBS". 
-			 Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
-			*/
-			document
-				.getElementById("hitungBS")
-				.addEventListener("click", function () {
-					const s = Number(document.getElementById("sisi").value); // Mengambil nilai dari input sisi, default 0 jika kosong
-					const luas = s * s; // Rumus luas bujur sangkar
-					document.getElementById("hasilBS").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilBS"
-					alert(`Luas: ${luas}\nRumus: Sisi x Sisi = ${s} x ${s} = ${luas}`); // Menampilkan hasil dalam alert
-				});
+	Isi data-datanya gunakan tbody  
 
-			/*SEGITIGA
-			 mengembalikan reference ke elemen HTML yang punya atribut id "hitungSG". 
-			 Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
-			*/
-			document
-				.getElementById("hitungSG")
-				.addEventListener("click", function () {
-					const a = Number(document.getElementById("alas").value); // Mengambil nilai dari input alas, default 0 jika kosong
-					const t = Number(document.getElementById("tinggi").value); // Mengambil nilai dari input tinggi, default 0 jika kosong
-					const luas = (a * t) / 2; // Rumus luas segitiga
-					document.getElementById("hasilSG").textContent = "Luas: " + luas; // Menampilkan hasil dengan menggunakan textContent untuk mengubah isi teks dari elemen "hasilSG"
-					alert(
-						`Luas: ${luas}\nRumus: 1/2 x Alas x Tinggi = 1/2 x ${a} x ${t} = ${luas}`
-					); // Menampilkan hasil dalam alert
-				});
+	Nama Pegawai, Umur, Jabatan, Status,
+
+	Gaji Pokok(if): Manajer=>15 jt, Asisten Manajer=>10 jt, Staff=>5 jt  
+
+	Tunjangan Jabatan: 15% dari gapok 
+
+	BPJS: 10% dari gapok 
+
+	Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok 
+
+	Total Gaji: jumlahlahkan seluruh element gaji (gunakan tfoot) 
+	*/
+			//Deklarasi Data Pegawai yang diketahui
+			const pegawai = {
+				nama: "Dodi Prayodi",
+				umur: 25,
+				jabatan: "Manajer",
+				status: "Menikah",
+			};
+
+			// hitung gaji pokok berdasarkan jabatan (tanpa function)
+			let gajiPokok;
+			if (pegawai.jabatan === "Manajer") {
+				gajiPokok = 15000000;
+			} else if (pegawai.jabatan === "Asisten Manajer") {
+				gajiPokok = 10000000;
+			} else if (pegawai.jabatan === "Staff") {
+				gajiPokok = 5000000;
+			} else {
+				gajiPokok = 0;
+			}
+
+			// hitung komponen gaji
+			const tunjanganJabatan = 0.15 * gajiPokok; //15% dari gaji pokok
+			const bpjs = 0.1 * gajiPokok; //10% dari gaji pokok
+
+			// hitung tunjangan keluarga dengan ternary operator
+			const tunjanganKeluarga =
+				pegawai.status === "Menikah" ? 0.2 * gajiPokok : 0;
+
+			// hitung total gaji
+			const totalGaji = gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs;
+
+			// Menampilkan data pegawai dalam tabel
+			// cari elemen tbody
+			const bodyTabel = document.getElementById("bodyTabel");
+
+			// Membuat baris untuk data pegawai
+			const row = document.createElement("tr");
+			row.innerHTML = `
+				<td>${pegawai.nama}</td>
+				<td>${pegawai.umur} tahun</td>
+				<td>${pegawai.jabatan}</td>
+				<td>${pegawai.status}</td>
+				<td>${gajiPokok.toLocaleString("id-ID")}</td>
+				<td>${tunjanganJabatan.toLocaleString("id-ID")}</td>
+				<td>${bpjs.toLocaleString("id-ID")}</td>
+				<td>${tunjanganKeluarga.toLocaleString("id-ID")}</td>
+				<td>${totalGaji.toLocaleString("id-ID")}</td>
+			`;
+
+			// nambahin baris ke tbody
+			bodyTabel.appendChild(row);
+
+			// cari elemen tfoot
+			const footTabel = document.getElementById("footTabel");
+
+			// Membuat baris untuk total gaji
+			const footRow = document.createElement("tr");
+			footRow.innerHTML = `
+				<td colspan="8">Total Gaji</td>
+				<td>${totalGaji.toLocaleString("id-ID")}</td>
+			`;
+
+			// nambahin baris ke tfoot
+			footTabel.appendChild(footRow);
 		</script>
 	</body>
 </html>

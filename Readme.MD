@@ -6,10 +6,13 @@ Repository ini berisi kumpulan tugas-tugas dari course Javascript ES6 SIB NF Aca
 
 - **Pertemuan 1**: 17 September 2025
   - [Hitung Luas](index.html)
+- **Pertemuan 2**: 18 September 2025
+  - [Data Pegawai](index.html)
 
 ## Struktur Repo
 - Setiap tugas akan disimpan sesuai pertemuan.
 - File tugas pertemuan 1: `Menghitung luas dari persegi panjang, bujur sangkar dan segitiga menggunakan variabel dan operator.`
+- File tugas pertemuan 2: `Mencetak data pegawai beserta menghitung gaji dengan fungsi if dalam bentuk tabel menggunakan DOM.`
 
 ---
 
