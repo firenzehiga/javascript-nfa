@@ -151,7 +151,6 @@
 					<input id="lebar" type="number" min="0" />
 				</div>
 
-				<!-- actions ada di bawah karena .actions { margin-top: auto } -->
 				<div class="actions">
 					<button id="hitungPP">Hitung</button>
 					<div id="hasilPP" class="result">Luas: —</div>
@@ -165,7 +164,6 @@
 					<input id="sisi" type="number" min="0" />
 				</div>
 
-				<!-- meskipun cuma 1 row di atas, .actions akan "didorong" ke bawah -->
 				<div class="actions">
 					<button id="hitungBS">Hitung</button>
 					<div id="hasilBS" class="result">Luas: —</div>
@@ -190,8 +188,10 @@
 		</main>
 
 		<script>
-			// PERSEGI PANJANG
-			// mengembalikan reference ke elemen HTML yang punya atribut id "hitungPP". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			/* PERSEGI PANJANG
+			mengembalikan reference ke elemen HTML yang punya atribut id "hitungPP". 
+			Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			*/
 			document
 				.getElementById("hitungPP")
 				.addEventListener("click", function () {
@@ -204,8 +204,10 @@
 					); // Menampilkan hasil dalam alert
 				});
 
-			// BUJUR SANGKAR
-			// mengembalikan reference ke elemen HTML yang punya atribut id "hitungBS". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			/*BUJUR SANGKAR
+			 mengembalikan reference ke elemen HTML yang punya atribut id "hitungBS". 
+			 Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			*/
 			document
 				.getElementById("hitungBS")
 				.addEventListener("click", function () {
@@ -215,8 +217,10 @@
 					alert(`Luas: ${luas}\nRumus: Sisi x Sisi = ${s} x ${s} = ${luas}`); // Menampilkan hasil dalam alert
 				});
 
-			// SEGITIGA
-			// mengembalikan reference ke elemen HTML yang punya atribut id "hitungSG". Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			/*SEGITIGA
+			 mengembalikan reference ke elemen HTML yang punya atribut id "hitungSG". 
+			 Lalu menambahkan event handler yang akan dijalankan ketika elemen tersebut diklik
+			*/
 			document
 				.getElementById("hitungSG")
 				.addEventListener("click", function () {
