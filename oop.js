@@ -94,31 +94,39 @@ const sistem = new ManajemenPelanggan();
 const pelanggan1 = new Pelanggan("Budi", "08123456789");
 const pelanggan2 = new Pelanggan("Alice", "08234567890");
 const pelanggan3 = new Pelanggan("Bob", "08345678901");
-
-// tambah pelanggan ke sistem (memasukkan pelanggan ke daftar)
-sistem.tambahPelanggan(pelanggan1); // tambah Budi ke sistem
-sistem.tambahPelanggan(pelanggan2); // tambah Alice ke sistem
-sistem.tambahPelanggan(pelanggan3); // tambah Bob ke sistem
+const pelanggan4 = new Pelanggan("Kuzo", "08589437365");
 
 // buat kendaraan
 const mobil1 = new Mobil("Toyota", "Camry", 4);
+const mobil2 = new Mobil("BYD", "Seal", 4);
 const motor1 = new Motor("Honda", "Beat", "Matic");
+const motor2 = new Motor("Yamaha", "MX King", "Manual");
 
 // tampilkan informasi kendaraan
 console.log("\nInformasi Kendaraan:\n");
 console.log(`1. ${mobil1.getInfo()}`);
 console.log(`2. ${motor1.getInfo()}`);
+console.log(`3. ${mobil2.getInfo()}`);
+console.log(`4. ${motor2.getInfo()}`);
 
 // tampilkan semua pelanggan (sebelum ada yang menyewa)
 console.log("\nDAFTAR PELANGGAN:\n");
 console.log(pelanggan1.getInfo());
 console.log(pelanggan2.getInfo());
 console.log(pelanggan3.getInfo());
+console.log(pelanggan4.getInfo());
 
-// tampilkan proses penyewaan kendaraan
+// tambah pelanggan ke sistem (memasukkan pelanggan ke daftar)
+sistem.tambahPelanggan(pelanggan1); // tambah Budi ke sistem
+sistem.tambahPelanggan(pelanggan2); // tambah Alice ke sistem
+sistem.tambahPelanggan(pelanggan3); // tambah Bob ke sistem
+sistem.tambahPelanggan(pelanggan4); // tambah Kuzo ke sistem
+
+// tampilkan proses penyewaan kendaraan dari pelanggan yang sudah ditambahkan ke sistem
 console.log("\n=== Proses Penyewaan ===\n");
-pelanggan1.sewaKendaraan(mobil1);
-pelanggan3.sewaKendaraan(motor1);
+pelanggan1.sewaKendaraan(mobil1); // Budi menyewa mobil Toyota Camry
+pelanggan3.sewaKendaraan(motor1); // Bob menyewa motor Honda Beat
+pelanggan4.sewaKendaraan(mobil2); // Kuzo menyewa mobil BYD Seal
 
 // tampilkan semua pelanggan yang sedang menyewa
 sistem.tampilkanPenyewa();
@@ -128,3 +136,4 @@ console.log("\nDAFTAR PELANGGAN (setelah ada yang menyewa):\n");
 console.log(pelanggan1.getInfo());
 console.log(pelanggan2.getInfo());
 console.log(pelanggan3.getInfo());
+console.log(pelanggan4.getInfo());
