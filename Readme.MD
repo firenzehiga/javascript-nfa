@@ -21,6 +21,10 @@ Repository ini berisi kumpulan tugas-tugas dari course Javascript ES6 SIB NF Aca
 - **Pertemuan 5**: 23 September 2025
   - [Fitur Manajemen Produk - HTML](index.html)
   - [Fitur Manajemen Produk - Script](script.js)
+- **Pertemuan 6**: 24 September 2025
+  - [Controller](controller.js)
+  - [Data](data.js)
+  - [App](app.js)
 
 
 ## Struktur Repo
@@ -30,6 +34,7 @@ Repository ini berisi kumpulan tugas-tugas dari course Javascript ES6 SIB NF Aca
 - File tugas pertemuan 3: ` Buat array produkToko serta membuat fungsi tambahProduk, hapusProduk, dan tampilkanProduk menggunakan javascript ES6.`
 - File tugas pertemuan 4: ` Buat sistem manajemen transportasi menggunakan konsep Object-Oriented Programming (OOP) dalam JavaScript`
 - File tugas pertemuan 5: ` Buat fitur manajemen produk menggunakan konsep rest, destructuring, dan spread operator dalam JavaScript.`
+- File tugas pertemuan 6: ` Buat controller, data, dan app menggunakan konsep module dalam JavaScript.`
 ---
 
 > Dibuat untuk memenuhi tugas course Javascript ES6 SIB NF Academy.
